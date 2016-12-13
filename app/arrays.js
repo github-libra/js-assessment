@@ -22,11 +22,13 @@ exports.arraysAnswers = {
   },
 
   truncate: function(arr) {
-
+     arr.pop()
+     return arr
   },
 
   prepend: function(arr, item) {
-
+    arr.unshift(item)
+    return arr
   },
 
   curtail: function(arr) {
@@ -38,7 +40,8 @@ exports.arraysAnswers = {
   },
 
   insert: function(arr, item, index) {
-
+    arr.splice(index, 0, item)
+    return arr
   },
 
   count: function(arr, item) {
@@ -50,10 +53,19 @@ exports.arraysAnswers = {
   },
 
   square: function(arr) {
-
+    return arr.map(i => i * i)
   },
 
   findAllOccurrences: function(arr, target) {
-
+    var o = []
+    arr.filter( (i, index) => {
+      if(i === target) {
+        o.push(index)
+        return true
+      } else {
+        return false
+      }
+    })
+    return o
   }
 };
